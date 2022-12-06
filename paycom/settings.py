@@ -76,7 +76,12 @@ WSGI_APPLICATION = 'paycom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '210030',
+        # 'NAME': '210030',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'bobdev2004',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
+        'NAME': 'bistro',
         'USER': 'postgres',
         'PASSWORD': 'bobdev2004',
         'HOST': 'localhost',

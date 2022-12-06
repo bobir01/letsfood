@@ -10,11 +10,11 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="210030@localhost" uuid="ed50a87e-9ec6-4fff-a0d9-a0580afdb5e4">
+    <data-source source="LOCAL" name="bobirtech" uuid="61504359-3340-4a27-a22b-f2b67d939a13">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/210030</jdbc-url>
+      <jdbc-url>jdbc:postgresql://bobir.tech:5432/bistro</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
