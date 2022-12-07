@@ -6,7 +6,7 @@ from django.conf import settings
 
 PAYME_ID = settings.PAYME.get('PAYME_ID')
 PAYME_ACCOUNT = settings.PAYME.get('PAYME_ACCOUNT')
-# PAYME_CALL_BACK_URL = settings.PAYME.get('PAYME_CALL_BACK_URL')
+PAYME_CALL_BACK_URL = settings.PAYME.get('PAYME_CALL_BACK_URL')
 PAYME_URL = settings.PAYME.get("PAYME_URL")
 BOT_URL = settings.PAYME.get('BOT_URL')
 
@@ -21,15 +21,14 @@ class GeneratePayLink:
         GeneratePayLink for each order.
         """
         GENERETED_PAY_LINK: str = "{payme_url}/{encode_params}"
-        PARAMS: str = 'm={payme_id};ac.{payme_account}={order_id};a={amount};c={bot_url}'
+        PARAMS: str = 'm={payme_id};ac.{payme_account}={order_id};a={amount};c={callback}'
 
         PARAMS = PARAMS.format(
             payme_id=PAYME_ID,
             payme_account=PAYME_ACCOUNT,
             order_id=self.order_id,
-            amount=self.amount,
-            bot_url=BOT_URL,
-            callback_params=queryset_for_user
+            amount=self.to_tiyin(self.amount),
+            callback=PAYME_CALL_BACK_URL
         )
         encode_params = base64.b64encode(PARAMS.encode("utf-8"))
         return GENERETED_PAY_LINK.format(
