@@ -27,7 +27,7 @@ class GeneratePayLink:
             payme_id=PAYME_ID,
             payme_account=PAYME_ACCOUNT,
             order_id=self.order_id,
-            amount=self.to_tiyin(self.amount),
+            amount=self.to_soum(self.amount),
             callback=PAYME_CALL_BACK_URL
         )
         encode_params = base64.b64encode(PARAMS.encode("utf-8"))
