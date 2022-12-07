@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x3p**-yq8%u1yn^%z1sug0&vsgswrk-kmq60!e-g=r&sc6$6@x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -134,7 +134,7 @@ PAYME: dict = {
     'PAYME_KEY': 'FY38DCHtBFuKPXQsEJ&58zX1eiIr1n?SgOwn',
     # 'PAYME_KEY': 'iEX0@w2wnxFmyGvFtZ?zN21psWhdVxPj2m4d', #orginal
     'PAYME_URL': 'https://checkout.paycom.uz',
-    'PAYME_CALL_BACK_URL': 'https://t.me/bistro_kitchen_bot?start',  # merchant api callback url
+    'PAYME_CALL_BACK_URL': 'https://t.me/letsfood_bot?start=12345',  # merchant api callback url
     'PAYME_MIN_AMOUNT': 25000,  # integer field
     'PAYME_ACCOUNT': 'order_id',
     'BOT_URL': 'https://t.me/letsfood_bot'
