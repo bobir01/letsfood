@@ -131,9 +131,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PAYME: dict = {
     'PAYME_ID': '6389b387cd83141d86fa3bb8',  # 6389b387cd83141d86fa3bb8
-    'PAYME_KEY': 'FY38DCHtBFuKPXQsEJ&58zX1eiIr1n?SgOwn',
+    'PAYME_KEY': 'FY38DCHtBFuKPXQsEJ&58zX1eiIr1n?SgOwn',  # test
     # 'PAYME_KEY': 'iEX0@w2wnxFmyGvFtZ?zN21psWhdVxPj2m4d', #orginal
-    'PAYME_URL': 'https://checkout.paycom.uz',
+    # 'PAYME_URL': 'https://checkout.paycom.uz',
+    'PAYME_URL': 'https://test.paycom.uz',
     'PAYME_CALL_BACK_URL': 'https://t.me/letsfood_bot?start=12345',  # merchant api callback url
     'PAYME_MIN_AMOUNT': 25000,  # integer field
     'PAYME_ACCOUNT': 'order_id',
