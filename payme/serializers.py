@@ -22,7 +22,7 @@ class MerchatTransactionsModelSerializer(serializers.ModelSerializer):
 
                 total_amount = Orders.objects.filter(order_id=data.get('order_id')).annotate(
                     sum_amount=F('price') * F('quantity')).aggregate(Sum('sum_amount'))['sum_amount__sum']
-                if total_amount != int(data['amount']):
+                if total_amount != int(data['amount']) / 100:
                     raise IncorrectAmount()
 
             except IncorrectAmount:

@@ -21,7 +21,7 @@ class GeneratePayLink:
         GeneratePayLink for each order.
         """
         GENERETED_PAY_LINK: str = "{payme_url}/{encode_params}"
-        PARAMS: str = 'm={payme_id};ac.{payme_account}={order_id};a={amount};c={bot_url}?start={callback_params}'
+        PARAMS: str = 'm={payme_id};ac.{payme_account}={order_id};a={amount};c={bot_url}'
 
         PARAMS = PARAMS.format(
             payme_id=PAYME_ID,
