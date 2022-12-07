@@ -18,7 +18,7 @@ class GetStatement:
                 'account': {
                     'order_id': row['order_id']
                 },
-                'creat_time': row['created_at'],
+                'creat_time': int(row['created_at'].timestamp()*1000),
                 'perform_time': row['perform_time'],
                 'cancel_time': row['cancel_time'],
                 "transaction": "",
