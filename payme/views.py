@@ -29,7 +29,7 @@ class MerchantAPIView(APIView):
     def get(self, request, *args, **kwargs):
         logged(request.query_params, 'info')
         print(request.query_params.get('amount'))
-        clean_query = {'amount': int(request.query_params.get('amount')),
+        clean_query = {'amount': int(request.query_params.get('amount'))*100,
                        'order_id': int(request.query_params.get('order_id')),
                        'user_id': int(request.query_params.get('user_id'))}
         MerchatTransactionsModelSerializer().validate(clean_query)
