@@ -20,6 +20,8 @@ from payme.methods.create_transaction import CreateTransaction
 from payme.methods.perform_transaction import PerformTransaction
 from payme.methods.check_perform_transaction import CheckPerformTransaction
 from payme.methods.generate_link import GeneratePayLink
+from payme.methods.get_statement import GetStatement
+
 
 
 class MerchantAPIView(APIView):
@@ -75,7 +77,8 @@ class MerchantAPIView(APIView):
             "CreateTransaction": CreateTransaction,
             "CancelTransaction": CancelTransaction,
             "PerformTransaction": PerformTransaction,
-            "CheckPerformTransaction": CheckPerformTransaction
+            "CheckPerformTransaction": CheckPerformTransaction,
+            'GetStatement': GetStatement,
         }
 
         try:
