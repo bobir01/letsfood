@@ -147,4 +147,4 @@ class SuccessNotifier(APIView):
         logged("get request for success", 'info')
         logged(request.query_params)
         logged(request.META, 'info')
-        return Response
+        return Response({'is_working': 'fine'})
