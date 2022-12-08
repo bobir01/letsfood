@@ -73,6 +73,11 @@ WSGI_APPLICATION = 'paycom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+
+CSRF_TRUSTED_ORIGINS = ['https://*.bobir.tech', 'http://*.bobir.tech',]
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
