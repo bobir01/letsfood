@@ -135,7 +135,7 @@ PAYME: dict = {
     # 'PAYME_KEY': 'iEX0@w2wnxFmyGvFtZ?zN21psWhdVxPj2m4d', #orginal
     # 'PAYME_URL': 'https://checkout.paycom.uz',
     'PAYME_URL': 'https://test.paycom.uz',
-    'PAYME_CALL_BACK_URL': 'letsfood.bobir.tech/payme/success',  # merchant api callback url
+    'PAYME_CALL_BACK_URL': 'http://letsfood.bobir.tech/payme/success',  # merchant api callback url
     'PAYME_MIN_AMOUNT': 25000,  # integer field
     'PAYME_ACCOUNT': 'order_id',
     'BOT_URL': 'https://t.me/letsfood_bot'
