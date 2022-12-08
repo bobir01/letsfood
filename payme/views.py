@@ -143,3 +143,15 @@ class MerchantAPIView(APIView):
         return is_payme
 
 
+
+
+class SuccessNotifier(MerchantAPIView):
+    permission_classes = ()
+    authentication_classes = ()
+    def get(self, request, *args, **kwargs):
+        logged("get request for success", 'info')
+        logged(request.query_params)
+        logged(request.META, 'info')
+        return Response
+
+
