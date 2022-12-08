@@ -2,26 +2,22 @@ import base64
 import binascii
 
 from django.conf import settings
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
-
-from payme.utils.logger import logged
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from payme.errors.exceptions import MethodNotFound
-from payme.errors.exceptions import PermissionDenied
 from payme.errors.exceptions import PerformTransactionDoesNotExist
-from payme.serializers import MerchatTransactionsModelSerializer
-
-from payme.methods.check_transaction import CheckTransaction
+from payme.errors.exceptions import PermissionDenied
 from payme.methods.cancel_transaction import CancelTransaction
-from payme.methods.create_transaction import CreateTransaction
-from payme.methods.perform_transaction import PerformTransaction
 from payme.methods.check_perform_transaction import CheckPerformTransaction
+from payme.methods.check_transaction import CheckTransaction
+from payme.methods.create_transaction import CreateTransaction
 from payme.methods.generate_link import GeneratePayLink
 from payme.methods.get_statement import GetStatement
-
+from payme.methods.perform_transaction import PerformTransaction
+from payme.serializers import MerchatTransactionsModelSerializer
+from payme.utils.logger import logged
 
 
 class MerchantAPIView(APIView):
@@ -31,7 +27,7 @@ class MerchantAPIView(APIView):
     def get(self, request, *args, **kwargs):
         logged(request.query_params, 'info')
         print(request.query_params.get('amount'))
-        clean_query = {'amount': int(request.query_params.get('amount'))*100,
+        clean_query = {'amount': int(request.query_params.get('amount')) * 100,
                        'order_id': int(request.query_params.get('order_id')),
                        'user_id': int(request.query_params.get('user_id'))}
         MerchatTransactionsModelSerializer().validate(clean_query)
@@ -143,15 +139,12 @@ class MerchantAPIView(APIView):
         return is_payme
 
 
-
-
-class SuccessNotifier(MerchantAPIView):
+class SuccessNotifier(APIView):
     permission_classes = ()
     authentication_classes = ()
+
     def get(self, request, *args, **kwargs):
         logged("get request for success", 'info')
         logged(request.query_params)
         logged(request.META, 'info')
         return Response
-
-
