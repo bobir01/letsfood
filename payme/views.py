@@ -1,6 +1,6 @@
 import base64
 import binascii
-
+import requests
 from django.conf import settings
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response

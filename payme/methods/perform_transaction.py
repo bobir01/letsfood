@@ -1,10 +1,13 @@
 import time
 
-from payme.utils.get_params import get_params
+from django.conf import settings
 
-from payme.utils.logger import logged
-from payme.models import MerchatTransactionsModel
+from payme.models import MerchatTransactionsModel, Orders
 from payme.serializers import MerchatTransactionsModelSerializer
+from payme.utils.get_params import get_params
+from payme.utils.logger import logged
+
+BOT_TOKEN = settings.PAYME.get('BOT_TOKEN')
 
 
 class PerformTransaction:
@@ -37,6 +40,21 @@ class PerformTransaction:
                     "state": int(transaction.state),
                 }
             }
+            if response.get('state') == 2:
+                # informing user
+                user_id = Orders.objects.filter(order_id=transaction.order_id)
+                req_url = f"https://api.telegram.org/bot{BOT_TOKEN}/SendMessage"
+                payload = {'chat_id': user_id,
+                           'text': 'Thank you for your purchase 🙂We have received your payment ✅'
+                                   'Спасибо за покупку 🙂 Мы получили ваш платеж ✅'
+                                   'Xaridingiz uchun tashakkur 🙂 Biz to\'lovni qabul qildik ✅'
+                           }
+                headers = {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+
+                response = requests.request("POST", req_url, headers=headers, data=payload)
         except Exception as e:
             logged_message = "error during get transaction in db {}{}"
             logged(
