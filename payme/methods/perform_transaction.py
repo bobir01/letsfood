@@ -43,10 +43,10 @@ class PerformTransaction:
             if response['result'].get('state') == 2:
                 # informing user
 
-                user_id = Orders.objects.filter(order_id=transaction.order_id).first()
-                logged(f"staring to inform user_id {user_id} has payed", 'info')
+                order = Orders.objects.get(order_id=transaction.order_id)
+                logged(f"staring to inform user_id {order.user_id} has payed", 'info')
                 req_url = f"https://api.telegram.org/bot{BOT_TOKEN}/SendMessage"
-                payload = {'chat_id': user_id,
+                payload = {'chat_id': order.user_id,
                            'text': 'Thank you for your purchase 🙂We have received your payment ✅'
                                    'Спасибо за покупку 🙂 Мы получили ваш платеж ✅'
                                    'Xaridingiz uchun tashakkur 🙂 Biz to\'lovni qabul qildik ✅'
@@ -57,6 +57,9 @@ class PerformTransaction:
                 }
 
                 res = requests.request("POST", req_url, headers=headers, data=payload)
+                order.is_paid = True
+                order.save()
+                logged(f'order: {order.order_id} is_paid = true updated ')
                 logged(res.json(), 'info')
         except Exception as e:
             logged_message = "error during get transaction in db {}{}"
