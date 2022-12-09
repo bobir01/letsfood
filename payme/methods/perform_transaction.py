@@ -40,9 +40,11 @@ class PerformTransaction:
                     "state": int(transaction.state),
                 }
             }
-            if response.get('state') == 2:
+            if response['result'].get('state') == 2:
                 # informing user
-                user_id = Orders.objects.filter(order_id=transaction.order_id)
+
+                user_id = Orders.objects.filter(order_id=transaction.order_id).first()
+                logged(f"staring to inform user_id {user_id} has payed", 'info')
                 req_url = f"https://api.telegram.org/bot{BOT_TOKEN}/SendMessage"
                 payload = {'chat_id': user_id,
                            'text': 'Thank you for your purchase 🙂We have received your payment ✅'
