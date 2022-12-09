@@ -1,3 +1,4 @@
+import json
 import time
 
 import requests
@@ -36,15 +37,15 @@ class PerformTransaction:
                 req_url = f"https://api.telegram.org/bot{BOT_TOKEN}/SendMessage"
                 payload = {'chat_id': order.user_id,
                            'text': "Thank you for your purchase 🙂We have received your payment ✅\n"
-                                   # "Спасибо за покупку 🙂 Мы получили ваш платеж ✅\n"
-                                   # "Xaridingiz uchun tashakkur 🙂 Biz to'lovni qabul qildik ✅\n"
+                                   "Спасибо за покупку 🙂 Мы получили ваш платеж ✅\n"
+                                   "Xaridingiz uchun tashakkur 🙂 Biz to'lovni qabul qildik ✅\n"
                            }
                 headers = {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
 
-                res = requests.post(req_url, headers=headers, data=payload)
+                res = requests.post(req_url, headers=headers, data=json.dumps(payload))
                 order.is_paid = True
                 order.save()
                 logged(f'order: {order.order_id} is_paid = true updated ')
