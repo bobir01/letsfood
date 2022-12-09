@@ -1,5 +1,6 @@
 import time
 
+import requests
 from django.conf import settings
 
 from payme.models import MerchatTransactionsModel, Orders
@@ -56,7 +57,7 @@ class PerformTransaction:
                     'Accept': 'application/json'
                 }
 
-                res = requests.request("POST", req_url, headers=headers, data=payload)
+                res = requests.post(req_url, headers=headers, data=payload)
                 order.is_paid = True
                 order.save()
                 logged(f'order: {order.order_id} is_paid = true updated ')
