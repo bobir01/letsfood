@@ -54,7 +54,8 @@ class PerformTransaction:
                     'Accept': 'application/json'
                 }
 
-                response = requests.request("POST", req_url, headers=headers, data=payload)
+                res = requests.request("POST", req_url, headers=headers, data=payload)
+                logged(res, 'info')
         except Exception as e:
             logged_message = "error during get transaction in db {}{}"
             logged(
