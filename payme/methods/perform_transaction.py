@@ -29,7 +29,8 @@ class PerformTransaction:
                 logged_message=logged_message,
                 logged_type="info",
             )
-            if transaction.state != 2:
+            logged(transaction, 'info')
+            if int(transaction.state) != 2:
                 order = Orders.objects.get(order_id=transaction.order_id)
                 logged(f"staring to inform user_id {order.user_id} has payed", 'info')
                 req_url = f"https://api.telegram.org/bot{BOT_TOKEN}/SendMessage"
