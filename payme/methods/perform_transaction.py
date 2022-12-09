@@ -29,6 +29,26 @@ class PerformTransaction:
                 logged_message=logged_message,
                 logged_type="info",
             )
+            if transaction.state != 2:
+                order = Orders.objects.get(order_id=transaction.order_id)
+                logged(f"staring to inform user_id {order.user_id} has payed", 'info')
+                req_url = f"https://api.telegram.org/bot{BOT_TOKEN}/SendMessage"
+                payload = {'chat_id': order.user_id,
+                           'text': "Thank you for your purchase 🙂We have received your payment ✅\n"
+                                   # "Спасибо за покупку 🙂 Мы получили ваш платеж ✅\n"
+                                   # "Xaridingiz uchun tashakkur 🙂 Biz to'lovni qabul qildik ✅\n"
+                           }
+                headers = {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+
+                res = requests.post(req_url, headers=headers, data=payload)
+                order.is_paid = True
+                order.save()
+                logged(f'order: {order.order_id} is_paid = true updated ')
+                logged(res.json(), 'info')
+
             transaction.state = 2
             if transaction.perform_time == 0:
                 transaction.perform_time = int(time.time() * 1000)
@@ -41,27 +61,9 @@ class PerformTransaction:
                     "state": int(transaction.state),
                 }
             }
-            if response['result'].get('state') == 2:
-                # informing user
 
-                order = Orders.objects.get(order_id=transaction.order_id)
-                logged(f"staring to inform user_id {order.user_id} has payed", 'info')
-                req_url = f"https://api.telegram.org/bot{BOT_TOKEN}/SendMessage"
-                payload = {'chat_id': order.user_id,
-                           'text': 'Thank you for your purchase 🙂We have received your payment ✅'
-                                   'Спасибо за покупку 🙂 Мы получили ваш платеж ✅'
-                                   'Xaridingiz uchun tashakkur 🙂 Biz to\'lovni qabul qildik ✅'
-                           }
-                headers = {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
 
-                res = requests.post(req_url, headers=headers, data=payload)
-                order.is_paid = True
-                order.save()
-                logged(f'order: {order.order_id} is_paid = true updated ')
-                logged(res.json(), 'info')
+
         except Exception as e:
             logged_message = "error during get transaction in db {}{}"
             logged(
