@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'bistro',
         'USER': 'postgres',
         'PASSWORD': 'bobdev2004',
-        'HOST': 'localhost',
+        'HOST': 'server.bobir.tech',
         'PORT': '5432'
     }
 }
@@ -117,11 +117,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -144,7 +144,8 @@ PAYME: dict = {
     'PAYME_MIN_AMOUNT': 100,  # integer field
     'PAYME_ACCOUNT': 'order_id',
     'BOT_URL': 'https://t.me/letsfood_bot',
-    'BOT_TOKEN': '5976174471:AAEjEdq2Zu-mXWXMvccLx8PymRBSHiwGx9s'
+    'BOT_TOKEN': '5976174471:AAEjEdq2Zu-mXWXMvccLx8PymRBSHiwGx9s',
+    'GROUP_ID': '-1001793359105'
 }
 
 LOGGING = {

@@ -24,7 +24,7 @@ class CheckPerformTransaction:
                     'price': row.price * 100,
                     "count": row.quantity,
                     'code': '02199006016000000',
-                    'package_code': '111',
+                    'package_code': '98461',
                     'vat_percent': 15
                 }
             )
