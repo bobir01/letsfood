@@ -85,7 +85,7 @@ class PerformTransaction:
                 requests.post(req_url, headers=headers, data=json.dumps(payload_group))
                 order.values().update(is_paid=True, order_time=datetime.datetime.now())
 
-                logged(f'order: {order.order_id} is_paid = true updated ')
+                logged(f"order: {order.first().get('user_id')} is_paid = true updated ")
                 logged(res.json(), 'info')
 
             transaction.state = 2
