@@ -63,7 +63,7 @@ class PerformTransaction:
                         total += record['price'] * record['quantity']
                         order_txt += f"{record['price']:,} * {record['quantity']:,} = {(record['price'] * record['quantity']):,}\n "
 
-                order_txt += _(" Итого: {0:,} \n").format(total)
+                order_txt += " Итого: {0:,} \n".format(total)
 
                 order_txt += "\n\n"
 
