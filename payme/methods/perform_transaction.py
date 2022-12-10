@@ -66,14 +66,14 @@ class PerformTransaction:
                 order_txt += " Итого: {0:,} \n".format(total)
 
                 order_txt += "\n\n"
+                order_data = order.first()
+                order_txt += "🛂Клиент: " + order_data['full_name'] + '\n'
+                order_txt += "\nPhone: " + " <code> " + order_data['phone'] + "</code>\n"
 
-                order_txt += "🛂Клиент: " + order_data[0]['full_name'] + '\n'
-                order_txt += "\nPhone: " + " <code> " + order_data[0]['phone'] + "</code>\n"
-
-                order_txt += f"<a href='https://www.google.com/maps/search/?api=1&query={order_data[0]['address_lat']},{order_data[0]['address_lon']}'>"  #
+                order_txt += f"<a href='https://www.google.com/maps/search/?api=1&query={order_data['address_lat']},{order_data['address_lon']}'>"  #
                 order_txt += "📍Address</a>\n"
-                if order_data[0]['comment']:
-                    order_txt += "Comment:" + order_data[0]['comment'] + "\n"
+                if order_data['comment']:
+                    order_txt += "Comment:" + order_data['comment'] + "\n"
 
                 payload_group = {
                     "chat_id": settings.PAYME.get("GROUP_ID"),
