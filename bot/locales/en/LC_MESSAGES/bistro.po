@@ -1,0 +1,316 @@
+# English translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-12-16 20:32+0500\n"
+"PO-Revision-Date: 2022-11-07 02:34+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: handlers/users/basket_handler.py:17 handlers/users/basket_handler.py:46
+#: handlers/users/basket_handler.py:74 handlers/users/basket_handler.py:103
+msgid "<b>Here is your basket</b>:\n"
+msgstr ""
+
+#: handlers/users/basket_handler.py:36 handlers/users/basket_handler.py:63
+#: handlers/users/basket_handler.py:91 handlers/users/basket_handler.py:126
+msgid ""
+"\n"
+"<b>Total: </b>{0:,}"
+msgstr ""
+
+#: handlers/users/basket_handler.py:124 handlers/users/confrim_order.py:17
+msgid "Your basket is empty"
+msgstr ""
+
+#: handlers/users/confrim_order.py:23
+msgid "Pay with PayMe 🚀"
+msgstr ""
+
+#: handlers/users/confrim_order.py:26
+msgid "Thanks for your purchase here is details:"
+msgstr ""
+
+#: handlers/users/confrim_order.py:35
+msgid ""
+"<b> Order number № {0} ☑️\n"
+"</b>"
+msgstr ""
+
+#: handlers/users/confrim_order.py:38
+msgid " menu № "
+msgstr ""
+
+#: handlers/users/confrim_order.py:40
+msgid " for lunch \n"
+msgstr ""
+
+#: handlers/users/confrim_order.py:44
+msgid " for dinner \n"
+msgstr ""
+
+#: handlers/users/confrim_order.py:48
+msgid " Total: {0:,} \n"
+msgstr ""
+
+#: handlers/users/confrim_order.py:51
+msgid "💸Is paid: YES"
+msgstr ""
+
+#: handlers/users/confrim_order.py:53
+msgid "💸Is paid: NO"
+msgstr ""
+
+#: handlers/users/confrim_order.py:57
+msgid "🛂Customer:"
+msgstr ""
+
+#: handlers/users/confrim_order.py:58
+msgid ""
+"\n"
+"Phone:"
+msgstr ""
+
+#: handlers/users/confrim_order.py:61
+msgid "📍Address</a>\n"
+msgstr ""
+
+#: handlers/users/confrim_order.py:63
+msgid "Comment:"
+msgstr ""
+
+#: handlers/users/confrim_order.py:65
+msgid "For extra information: +99890 000 00 00"
+msgstr ""
+
+#: handlers/users/help.py:30 handlers/users/help.py:33
+msgid "Change settings"
+msgstr ""
+
+#: handlers/users/help.py:40
+msgid "Enter your name:"
+msgstr ""
+
+#: handlers/users/help.py:47
+msgid "Your name has been changed!"
+msgstr ""
+
+#: handlers/users/help.py:56
+msgid ""
+"Enter your phone number or share your contact:\n"
+"Example: 90 123 45 67\n"
+"Your current phone {}"
+msgstr ""
+
+#: handlers/users/help.py:70 handlers/users/main_handler.py:71
+msgid "Please enter a valid phone number!"
+msgstr ""
+
+#: handlers/users/help.py:73
+msgid "Your phone number has been changed!"
+msgstr ""
+
+#: handlers/users/help.py:81
+msgid "Choose your language:"
+msgstr ""
+
+#: handlers/users/info_getter.py:21
+msgid ""
+"📌Here you can find information about our restaurant📌    \n"
+"📍Address: 1000, Tashkent, Yunusobod district, Mirzo Ulugbek street, 2\n"
+"📞Phone number: +998 71 200 00 00\n"
+"📧Email:bistro@akfauniversity.org\n"
+"🕐Working hours: 10:00 - 22:00\n"
+"📅Days off: Sunday\n"
+"🚗Delivery: Yes\n"
+"🍽️Cuisine: European, Uzbek\n"
+"    "
+msgstr ""
+
+#: handlers/users/main_handler.py:34 handlers/users/main_handler.py:52
+msgid "Here is our menu"
+msgstr ""
+
+#: handlers/users/main_handler.py:57 handlers/users/main_handler.py:85
+msgid "Here is our offers"
+msgstr ""
+
+#: handlers/users/main_handler.py:59
+msgid "Here is our menu offers"
+msgstr ""
+
+#: handlers/users/main_handler.py:82
+msgid "Language changed to 🇺🇸"
+msgstr ""
+
+#: handlers/users/main_handler.py:91
+msgid "Sorry our service is not available after 11:00 !"
+msgstr ""
+
+#: handlers/users/main_handler.py:102
+msgid "Where do you want to get your order?📍"
+msgstr ""
+
+#: handlers/users/main_handler.py:105
+msgid "Looks like you didn't provide your phone number, please enter it here: "
+msgstr ""
+
+#: handlers/users/main_handler.py:113 handlers/users/main_handler.py:122
+msgid ""
+"Confirm address✅\n"
+"If this is incorrect resend it📍"
+msgstr ""
+
+#: handlers/users/main_handler.py:126 keyboards/default/main_keyboard.py:38
+msgid "Confirm address✅"
+msgstr ""
+
+#: handlers/users/main_handler.py:129 keyboards/default/main_keyboard.py:38
+msgid "Comment to address (optional)"
+msgstr ""
+
+#: handlers/users/main_handler.py:130
+msgid "Send your comment"
+msgstr ""
+
+#: handlers/users/main_handler.py:133
+msgid "Where do you want to get your order? 📍"
+msgstr ""
+
+#: handlers/users/main_handler.py:137 handlers/users/main_handler.py:146
+msgid "Select time of meal"
+msgstr ""
+
+#: handlers/users/main_handler.py:144
+msgid "Comment added"
+msgstr ""
+
+#: handlers/users/main_handler.py:152
+msgid "For Dinner 🍽"
+msgstr ""
+
+#: handlers/users/main_handler.py:158
+msgid "For Lunch🍲"
+msgstr ""
+
+#: handlers/users/main_handler.py:168 handlers/users/main_handler.py:180
+#: handlers/users/main_handler.py:201 handlers/users/main_handler.py:215
+
+msgid ""
+"\n"
+"{} sum"
+msgstr "{} sum"
+
+#: handlers/users/main_handler.py:172 handlers/users/main_handler.py:184
+#: handlers/users/main_handler.py:206 handlers/users/main_handler.py:220
+msgid "Choose the number of portions or type it"
+msgstr "Choose the number of portions or type it"
+
+#: handlers/users/main_handler.py:228 handlers/users/main_handler.py:246
+#: handlers/users/main_handler.py:261 handlers/users/main_handler.py:276
+msgid "Added to basket 🛒"
+msgstr ""
+
+#: handlers/users/main_handler.py:231 handlers/users/main_handler.py:249
+#: handlers/users/main_handler.py:264 handlers/users/main_handler.py:279
+msgid "What else do you want to order?"
+msgstr ""
+
+#: keyboards/default/basket_keyboard.py:8 keyboards/default/confirm_markup.py:7
+#: keyboards/default/contact_keyboard.py:9 keyboards/default/lanch.py:11
+#: keyboards/default/main_keyboard.py:34 keyboards/default/menu_keybord.py:18
+#: keyboards/default/menu_type_markup.py:10
+#: keyboards/default/settings_keyboard.py:12
+#: keyboards/default/settings_keyboard.py:23
+msgid "Back ⬅️"
+msgstr "Back ⬅️"
+
+#: keyboards/default/basket_keyboard.py:9
+msgid "Basket 🛒"
+msgstr ""
+
+#: keyboards/default/confirm_markup.py:6
+msgid "Confirm order 🚖"
+msgstr ""
+
+#: keyboards/default/contact_keyboard.py:8
+msgid "Share your contact 📞"
+msgstr ""
+
+#: keyboards/default/lanch.py:10
+msgid "Lunch🍲"
+msgstr ""
+
+#: keyboards/default/lanch.py:10
+msgid "Dinner🍽"
+msgstr ""
+
+#: keyboards/default/main_keyboard.py:11 keyboards/default/main_keyboard.py:20
+msgid "Order 🛍"
+msgstr ""
+
+#: keyboards/default/main_keyboard.py:12 keyboards/default/main_keyboard.py:21
+msgid "Info ℹ️"
+msgstr ""
+
+#: keyboards/default/main_keyboard.py:13 keyboards/default/main_keyboard.py:22
+msgid "Settings⚙️"
+msgstr ""
+
+#: keyboards/default/main_keyboard.py:33
+msgid "Share your location📍"
+msgstr ""
+
+#: keyboards/default/menu_type_markup.py:9
+msgid "Full set"
+msgstr ""
+
+#: keyboards/default/menu_type_markup.py:9
+msgid "Partial set"
+msgstr ""
+
+#: keyboards/default/settings_keyboard.py:9
+#: keyboards/default/settings_keyboard.py:20
+msgid "Change name ✏️"
+msgstr ""
+
+#: keyboards/default/settings_keyboard.py:10
+#: keyboards/default/settings_keyboard.py:21
+msgid "Change phone 📱"
+msgstr ""
+
+#: keyboards/default/settings_keyboard.py:11
+#: keyboards/default/settings_keyboard.py:22
+msgid "Change language 🇺🇿"
+msgstr ""
+
+#: keyboards/inline/food_inline_keyboard.py:58
+msgid "Full ✅"
+msgstr ""
+
+#: keyboards/inline/food_inline_keyboard.py:60
+msgid "Partial"
+msgstr ""
+
+#: keyboards/inline/food_inline_keyboard.py:62
+msgid "Full"
+msgstr ""
+
+#: keyboards/inline/food_inline_keyboard.py:63
+msgid "Partial ✅"
+msgstr ""
+
+#~ msgid "Payment accepted your order has been confirmed"
+#~ msgstr ""
+
