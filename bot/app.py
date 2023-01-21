@@ -14,13 +14,11 @@ WEBAPP_PORT = 8000
 
 async def on_startup(dispatcher):
     await bot.set_webhook(WEBHOOK_URL)
-    await db_m.create()
+    await db_m.create() # for language db pool
     await db.create()
     await db.create_table_users()
-    # await db.create_table_menu_lunch()
-    # await db.create_table_menu_dinner()
     await db.create_table_basket()
-    # await db.create_table_orders()
+
 
     await set_default_commands(dispatcher)
 
@@ -30,12 +28,10 @@ async def on_startup(dispatcher):
 async def on_shutdown(dp):
     logging.warning('Shutting down..')
 
-    # insert code here to run it before shutdown
 
-    # Remove webhook (not acceptable in some cases)
     await bot.delete_webhook()
 
-    # Close DB connection (if used)
+
     await dp.storage.close()
     await dp.storage.wait_closed()
 
